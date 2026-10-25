@@ -38,4 +38,4 @@
 
 ## 开源
 
-使用 [MIT 许可证](LICENSE)。开发、测试和打包方法见[开发说明](DEVELOPMENT.md)。
+使用 [Apache 2.0 许可证](LICENSE)。开发、测试和打包方法见[开发说明](DEVELOPMENT.md)。
