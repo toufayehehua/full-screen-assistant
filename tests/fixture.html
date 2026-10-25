@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Full-Screen Assistant · Original player test</title>
+<style>
+  body{margin:24px;font:16px system-ui;background:#edf0f4;color:#172a45}#player{position:relative;width:640px;height:360px;background:#000}#source{display:block;width:100%;height:100%;object-fit:contain}#player:fullscreen{width:100vw;height:100vh}#site-controls{position:absolute;bottom:0;left:0;right:0;padding:12px;background:#172a45d9;display:flex;gap:8px}button,input{padding:10px}#site-caption{position:absolute;bottom:85px;width:100%;text-align:center;color:#fff;font-size:24px;text-shadow:0 1px 4px #000}#report{display:block;white-space:pre-wrap;font:13px monospace;max-width:1000px}iframe{width:760px;height:570px;border:0}body.child{margin:0}body.child #player{width:100vw;height:100vh}
+</style>
+<section id="player">
+  <video id="source" controls playsinline muted></video>
+  <div id="site-caption">Source captions · 1920 × 1080</div>
+  <div id="site-controls">
+    <button id="play">Play / pause</button>
+    <button id="fullscreen">Fullscreen video</button>
+    <button id="exit">Exit fullscreen</button>
+    <button id="quality">4K source</button>
+  </div>
+</section>
+<input id="outside" aria-label="Outside the video" placeholder="Independent page input">
+<output id="report"></output>
+<script>
+  const params=new URLSearchParams(location.search);
+  const video=document.querySelector('#source');
+  const player=document.querySelector('#player');
+  const caption=document.querySelector('#site-caption');
+  const initialVideo=video,initialControls=document.querySelector('#site-controls');
+  const token=crypto.randomUUID();
+  const canvas=document.createElement('canvas');
+  canvas.width=1920;canvas.height=1080;
+  const context=canvas.getContext('2d');
+  let frames=0,stream,raf,lastPaint=0;
+  const coverHistory=[];
+  const events=[];
+  for(const name of ['fullscreenchange','visibilitychange','resize','pagehide'])window.addEventListener(name,()=>events.push({event:name,at:Math.round(performance.now()),fullscreen:document.fullscreenElement?.id||null,visibility:document.visibilityState,width:innerWidth,height:innerHeight}),true);
+  const coverTimes=new WeakMap();
+  new MutationObserver(records=>{
+    for(const record of records){
+      for(const node of record.addedNodes)if(node.nodeType===1&&node.hasAttribute('data-full-screen-assistant'))coverTimes.set(node,performance.now());
+      for(const node of record.removedNodes)if(coverTimes.has(node))coverHistory.push(Math.round(performance.now()-coverTimes.get(node)));
+    }
+  }).observe(document.documentElement,{childList:true});
+  function paint(now=0){
+    raf=requestAnimationFrame(paint);
+    if(document.hidden||(video.paused&&video.readyState>=2)||now-lastPaint<33)return;
+    lastPaint=now;
+    frames++;
+    context.fillStyle='#15324a';context.fillRect(0,0,canvas.width,canvas.height);
+    const size=canvas.width/1920;
+    context.save();context.scale(size,size);
+    context.strokeStyle='#dae8f3';context.lineWidth=1;
+    for(let x=30;x<1890;x+=12){context.beginPath();context.moveTo(x,120);context.lineTo(x,800);context.stroke();}
+    context.fillStyle='#fff';context.font='48px system-ui';context.fillText('Original player · '+canvas.width+' × '+canvas.height,60,80);
+    context.font='20px system-ui';context.fillText('Fine lines and original controls remain in the same document',60,910);
+    context.fillStyle='#ffac58';context.fillRect(50+(frames*8)%1650,500,160,100);
+    context.restore();
+  }
+  function report(){
+    document.querySelector('#report').textContent=JSON.stringify({token,ready:video.readyState>=2,width:video.videoWidth,height:video.videoHeight,sameVideo:document.querySelector('#source')===initialVideo,sameControls:document.querySelector('#site-controls')===initialControls,sameStream:video.srcObject===stream,streamId:stream?.id,fullscreenTarget:document.fullscreenElement?.id||null,captionPresent:player.contains(caption),paused:video.paused,frames,coverPresent:!!document.querySelector('[data-full-screen-assistant]'),coverHistory,events},null,2);
+  }
+  document.querySelector('#fullscreen').onclick=()=>player.requestFullscreen().catch(error=>{document.body.dataset.error=error.message});
+  document.querySelector('#exit').onclick=()=>document.exitFullscreen().catch(error=>{document.body.dataset.error=error.message});
+  document.querySelector('#play').onclick=()=>video.paused?video.play():video.pause();
+  document.querySelector('#quality').onclick=()=>{canvas.width=3840;canvas.height=2160;caption.textContent='Source captions · 3840 × 2160'};
+  if(params.has('child'))document.body.classList.add('child');
+  paint();
+  stream=canvas.captureStream(30);
+  video.srcObject=stream;
+  video.play().catch(error=>{document.body.dataset.error=error.message});
+  setInterval(report,100);
+  window.addEventListener('pagehide',()=>{cancelAnimationFrame(raf);stream.getTracks().forEach(track=>track.stop())});
+  if(params.has('iframe')){
+    cancelAnimationFrame(raf);stream.getTracks().forEach(track=>track.stop());video.srcObject=null;
+    player.remove();
+    const frame=document.createElement('iframe');frame.id='video-frame';frame.allow='autoplay; fullscreen';
+    const url=new URL('/fixture.html?child=1',location.href);url.hostname=location.hostname==='127.0.0.1'?'localhost':'127.0.0.1';frame.src=url;
+    document.body.prepend(frame);
+    const button=document.createElement('button');button.id='frame-fullscreen';button.textContent='Fullscreen iframe from parent';button.onclick=()=>frame.requestFullscreen();frame.after(button);
+  }
+</script>
+</html>
