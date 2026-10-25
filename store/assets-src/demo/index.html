@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Full-Screen Assistant · 原创演示</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#edf2f6;color:#132d42;font:16px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}header{height:82px;background:#fff;border-bottom:1px solid #dbe4ec;display:flex;align-items:center;justify-content:space-between;padding:0 48px}.brand{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:650}.brand img{width:36px;height:36px}.badge{font-size:13px;color:#687f92}main{max-width:1184px;margin:30px auto;padding:0 24px}.heading{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px}h1{font-size:29px;line-height:1.2;margin:0 0 8px;font-weight:650}.eyebrow{font-size:12px;letter-spacing:.18em;color:#768c9f}section{display:grid;grid-template-columns:minmax(0,1fr) 262px;gap:24px;align-items:start}.video-card{padding:0;background:#fff;border-radius:14px;overflow:hidden;border:1px solid #d8e3ec;box-shadow:0 8px 24px #1e3b5110}video{display:block;width:100%;aspect-ratio:16/9;background:#142d49;object-fit:cover}.video-bar{display:flex;justify-content:space-between;align-items:center;padding:15px 18px}.video-label{font-weight:550;font-size:15px}button{border:0;border-radius:8px;background:#244e6b;color:#fff;padding:10px 20px;font:500 14px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;cursor:pointer}button:disabled{opacity:.4;cursor:default}aside{background:#fff;border:1px solid #d8e3ec;border-radius:14px;padding:20px}aside h2{font-size:17px;margin:0 0 15px}textarea{width:100%;height:180px;border:1px solid #dbe5ed;border-radius:9px;padding:12px;resize:none;outline-color:#8ebbc6;background:#f7fafc;font:14px/1.6 inherit;color:#405a6e}.meta{display:flex;gap:10px;margin-top:20px;color:#6e8597;font-size:12px}.meta span{padding:5px 10px;border:1px solid #d1dfe9;border-radius:20px;background:#f4f8fa}.foot{font-size:12px;color:#7c91a2;margin-top:22px} @media(max-width:850px){section{grid-template-columns:1fr}aside{display:none}header{padding:0 24px}}
+  </style>
+</head>
+<body>
+  <header><div class="brand"><img src="../../../icons/128.png" alt="">Full-Screen Assistant</div><span class="badge">原创演示页面</span></header>
+  <main>
+    <div class="heading"><div><div class="eyebrow">ORIGINAL DEMO</div><h1>山海之间</h1></div><span class="badge">静谧的远山与湖面</span></div>
+    <section>
+      <div class="video-card"><video id="video" playsinline muted loop></video><div class="video-bar"><span class="video-label">山海之间 · 原创短片</span><button id="fullscreen" disabled>全屏播放</button></div></div>
+      <aside><h2>随手记</h2><textarea aria-label="随手记"></textarea><div class="meta"><span>灵感</span><span>工作</span><span>生活</span></div></aside>
+    </section>
+    <div class="foot">原创画面仅用于展示插件的实际运行效果。</div>
+  </main>
+  <script>
+    const video=document.querySelector('#video');
+    const fullscreen=document.querySelector('#fullscreen');
+    fullscreen.addEventListener('click',()=>video.requestFullscreen());
+    async function setup(){
+      const image=new Image();image.src='landscape.svg';await image.decode();
+      const canvas=document.createElement('canvas');canvas.width=1280;canvas.height=720;const ctx=canvas.getContext('2d');
+      const stream=canvas.captureStream(25);const recorder=new MediaRecorder(stream,{mimeType:'video/webm;codecs=vp8',videoBitsPerSecond:3000000});
+      const parts=[];recorder.ondataavailable=e=>{if(e.data.size)parts.push(e.data)};
+      const done=new Promise(r=>recorder.onstop=r);let frame;let tick=0;
+      const paint=()=>{ctx.drawImage(image,0,0);ctx.fillStyle='rgba(180,224,231,.55)';for(let i=0;i<5;i++){const x=120+i*180+Math.sin(tick/24+i)*20;const y=645+i%3*12;ctx.fillRect(x,y,90-i*10,1.2)}tick++;frame=requestAnimationFrame(paint)};
+      paint();recorder.start(100);await new Promise(r=>setTimeout(r,2400));recorder.stop();await done;cancelAnimationFrame(frame);stream.getTracks().forEach(t=>t.stop());
+      video.src=URL.createObjectURL(new Blob(parts,{type:'video/webm'}));
+      await new Promise((resolve,reject)=>{video.addEventListener('loadeddata',resolve,{once:true});video.addEventListener('error',reject,{once:true})});
+      if(!Number.isFinite(video.duration)){await new Promise(resolve=>{const timer=setTimeout(resolve,1200);video.addEventListener('seeked',()=>{clearTimeout(timer);resolve()},{once:true});video.currentTime=1e9});video.currentTime=0}
+      await video.play();fullscreen.disabled=false;window.demoReady=true;
+    }
+    setup().catch(error=>{console.error(error);window.demoError=error.message});
+  </script>
+</body>
+</html>
