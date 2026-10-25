@@ -15,7 +15,7 @@ try {
   const directory = "Full-Screen Assistant";
   const target = path.join(staging, directory);
   await mkdir(target);
-  for (const file of ["manifest.json", "bridge.js", "page.js", "service-worker.js", "placeholder.html", "placeholder.css", "placeholder.js", "icons", "_locales", "README.md"]) {
+  for (const file of ["manifest.json", "bridge.js", "page.js", "service-worker.js", "placeholder.html", "placeholder.css", "placeholder.js", "icons", "_locales", "README.md", "LICENSE", "NOTICE"]) {
     await cp(path.join(root, file), path.join(target, file), { recursive: true });
   }
   await cp(path.join(root, "store", "privacy-policy.html"), path.join(target, "privacy.html"));
