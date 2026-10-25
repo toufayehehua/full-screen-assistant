@@ -1,0 +1,87 @@
+{
+  "product_name": "Full-Screen Assistant",
+  "default_listing_language": "en",
+  "suggested_category": "Tools",
+  "locales": {
+    "zh-CN": {
+      "name": "Full-Screen Assistant",
+      "short_description": "将原视频标签临时移入独立全屏窗口，保留网站播放器、字幕及原浏览器，退出后返回原位。",
+      "detailed_description": "Full-Screen Assistant 将原视频标签临时移入独立全屏窗口，继续使用网站原播放器、字幕及清晰度菜单。原浏览器在原标签位置显示模糊占位，其他标签仍可使用。原网页周围的内容随视频标签移动，不能同时在原浏览器操作。\n\n按 Esc、使用网站退出全屏按钮或点击占位，可将视频标签移回浏览器，并显示由模糊变清晰的返回过渡。系统关闭窗口按钮或 Cmd-W 会关闭真实视频标签。\n\n安装后刷新视频网页，再点击播放器全屏按钮；也可点击扩展图标选择当前页面的视频。需要桌面版 Chrome 120 或以上，适用于支持的 HTML5 视频及 iframe 播放器，不保证所有网站或内容均兼容，也不绕过 DRM 或网站限制。预览不可用时，占位使用渐变背景。\n\n扩展在本机处理当前页面标题、用于返回的原网页地址、单帧视频预览、必要的窗口会话信息及可信操作手势。会话信息临时保存；原网页地址还保留在占位标签现有的原生历史条目状态中，用于后退恢复普通网页，直至 Chrome 移除此条目或用户清理浏览历史。占位图标由 Chrome 内部图标服务提供，不使用第三方图标服务。不上传这些数据、不录制连续视频，也不使用广告或分析追踪。具体处理范围见隐私政策。"
+    },
+    "en": {
+      "name": "Full-Screen Assistant",
+      "short_description": "Move the original video tab into its own fullscreen window, keep website controls and captions, then return it to your browser.",
+      "detailed_description": "Full-Screen Assistant temporarily moves the original video tab into a separate fullscreen window, keeping the website’s player, captions and quality menu. A blurred placeholder occupies its original tab position, while other browser tabs remain usable. The surrounding webpage moves with the video tab and cannot simultaneously be used in the original browser.\n\nPress Esc, use the website’s exit-fullscreen button or click the placeholder to return the tab, with a transition from blurred to clear. The system window-close button or Cmd-W closes the real video tab.\n\nAfter installation, refresh video pages and use the player’s fullscreen button. You can also click the extension icon to select a video. Requires desktop Chrome 120 or later. Supports compatible HTML5 and iframe players; individual websites or content may have restrictions. It does not bypass DRM. If a preview is unavailable, the placeholder uses a gradient.\n\nCurrent-page titles, the original page address for recovery, a single video still, necessary window/session information and trusted gestures are handled on your device. Session information is temporary; the original address also remains in the state of the placeholder tab’s existing native history entry for Back recovery until Chrome removes the entry or you clear browsing history. Placeholder icons come from Chrome’s internal favicon service, without a third-party favicon service. The extension does not upload this data, record continuous video or use advertising or analytics trackers. See the privacy policy for details."
+    }
+  },
+  "privacy_practices": {
+    "single_purpose_zh": "将用户操作的原视频标签临时移入独立全屏窗口，在原浏览器保留可点击返回的占位标签，退出后将真实网页移回。",
+    "single_purpose_en": "Temporarily move the original video tab into its own fullscreen window, keep a return placeholder in the original browser, then move the real page back on exit.",
+    "storage_justification_zh": "chrome.storage.session 暂存当前页面标题、用于返回的原网页 HTTP(S) 地址、源/占位标签、窗口、框架、文档及会话标识、恢复顺序/固定/分组等状态，以及允许时取得的单帧 JPEG 预览。会话结束时移除；失败重试所需记录保留至恢复或清理完成。另以 history.replaceState 将原网页地址写入占位标签现有的原生历史条目状态，用于后退恢复普通网页；该状态保留至 Chrome 移除此条目或用户清理浏览历史，不随会话结束立即删除。不使用 storage.sync，不另建浏览历史日志，不存储 WebRTC SDP/ICE。",
+    "storage_justification_en": "chrome.storage.session temporarily keeps the current-page title, original HTTP(S) page address for recovery, source/placeholder tab, window, frame, document and session identifiers, restoration state and an optional JPEG still. Session records are removed on completion; retry metadata remains until recovery or cleanup. Separately, history.replaceState stores the original address in the placeholder’s existing native history-entry state for Back recovery. That state remains until Chrome removes the entry or the user clears browsing history, rather than being deleted with the session. No storage.sync, additional history log or WebRTC SDP/ICE is used.",
+    "website_access_justification_zh": "需要在 HTTP/HTTPS 网页及其子框架中发现用户操作的视频、接管全屏请求、尝试生成单帧视频预览，并在返回时恢复网页布局和显示过渡。播放器可能分布在不同网站或跨域 iframe 中，因此内容脚本匹配 HTTP/HTTPS 页面及相关子框架。脚本不抓取整页内容，不读取网站表单、Cookie 或账号凭据，不向开发者发送网页内容。",
+    "website_access_justification_en": "Content scripts run on HTTP/HTTPS pages and their frames to find the video the user operates, handle fullscreen requests, attempt a single-frame video preview, and restore page layout with a return transition. Players can be on different websites or inside cross-origin iframes, requiring matching pages and related frames. The extension does not scrape whole pages, read website forms, cookies or credentials, or send page content to the developer.",
+    "uses_remote_code": false,
+    "remote_code_justification_en": "All executable extension JavaScript, HTML and CSS is bundled in the submitted package. No remotely hosted scripts, dynamic remote code, eval-based code loading or remote configuration supplying executable code is used. Website media playback remains under the website's own implementation.",
+    "data_handling": {
+      "website_content": "Handles the current video page title, a possible reduced-size JPEG video still and the original website icon supplied by Chrome’s internal favicon service for the local placeholder. The original page/video continues playing in the moved tab; no live video stream is captured or re-encoded. No upload or persistent video recording is implemented.",
+      "network_metadata": "No WebRTC SDP/ICE or local video-channel connection metadata is produced by version 0.2. Older 0.1.x versions temporarily handled local SDP/ICE descriptions, which could include local connection/address information; the policy retains that legacy disclosure.",
+      "other_data": "Temporary tab/window/frame/document/session identifiers, session timing/status and restoration metadata such as tab order, pinning and group are processed locally. Recovery metadata may include a local error description. No account, password, cookie, payment, health or form-field collection is implemented.",
+      "sold_or_used_for_ads": false,
+      "used_for_unrelated_purposes": false,
+      "used_for_creditworthiness_or_lending": false,
+      "web_history": "The current video page title and original HTTP(S) page address are associated with the fullscreen session. The original address is also written with history.replaceState into the placeholder’s existing native history-entry state for Back recovery. This state persists until Chrome removes the entry or the user clears browsing history; it is not deleted with the temporary session. No additional visited-page log or browsing-history permission/API is used.",
+      "location": "Not processed for an extension video channel in 0.2: no WebRTC connection is created, no GPS/geolocation permission or location-lookup service is used. Location/address disclosure remains applicable only to legacy 0.1.x SDP/ICE metadata.",
+      "user_activity": "Trusted click, touch and key gestures on matching pages are handled locally to validate fullscreen requests and trigger sessions. Only the latest trusted-gesture time and necessary activation timing remain in page memory, overwritten by later activity and discarded on page refresh/close. Fullscreen entry/exit actions trigger local tab restoration. No typed content, keystroke log or complete click/scroll trail is recorded or uploaded."
+    },
+    "privacy_policy_file": "privacy-policy.html",
+    "privacy_policy_public_url": "https://fsa-privacy-zhangyi.toufayehehua.chatgpt.site",
+    "dashboard_chosen_categories": [
+      "website_content",
+      "web_history",
+      "user_activity"
+    ],
+    "legacy_0_1_dashboard_categories": [
+      "website_content",
+      "web_history",
+      "location",
+      "user_activity"
+    ],
+    "favicon_justification_zh": "用于在占位标签显示用户当前原网页的网站图标。以已保存的原网页地址为参数，通过扩展自身的 _favicon/ 地址访问 Chrome 内部图标缓存；不扫描浏览历史，不直接向原网站抓图，不使用第三方图标服务，也不上传地址或图标。",
+    "favicon_justification_en": "Displays the original website icon in its placeholder, using only the saved address of the user’s current source page with the extension’s own _favicon/ URL and Chrome’s internal favicon cache. It does not scan browsing history, fetch icons directly from websites, use a third-party favicon service or upload addresses or icons."
+  },
+  "review_demo_public_url": "https://domicube.xyz/extensions/full-screen-assistant/demo/",
+  "dashboard_notes_zh": "0.2.1(11)，Chrome 120+，安装或重载后刷新网页。无需扩展账号或付费。\n演示：https://domicube.xyz/extensions/full-screen-assistant/demo/ 等“全屏播放”启用后点击；短片静音。\n原视频标签移入独立全屏窗口，保留网站控件；原浏览器留占位，其他标签可用。Esc、网站退出或占位用于返回；关闭/Cmd-W关闭真实视频。\n已加载构建10快照实测用户指定YouTube视频Xtfl8kTze6g：3840×2160、原按钮及Esc返回、再次进入。11沿用该运行实现并更新版本及默认英文元数据，未另做Chrome实测。后退、图标外观、DRM及macOS桌面编号未实测。\nstorage会话临存标题、原网页地址及预览；原址另保留在占位原生历史条目用于后退。favicon仅用Chrome内部缓存，无第三方图标服务或数据上传。",
+  "dashboard_notes_en": "0.2.1(11), Chrome120+; refresh pages. Demo: https://domicube.xyz/extensions/full-screen-assistant/demo/ No extension login/payment. Same real tab/player; Esc/site exit/placeholder returns it, Close/Cmd-W closes it. Loaded build10: YouTube Xtfl8kTze6g, 3840x2160, site exit, Esc and re-entry checked. Build11 has not been separately Chrome-tested. Back/icon appearance, DRM and desktop IDs unverified. Local URL/history-state recovery; Chrome favicon cache; no upload.",
+  "prepared_upload": {
+    "version": "0.2.1.11",
+    "version_name": "0.2.1 (11)",
+    "status": "pending_review",
+    "uploaded": true,
+    "submitted": true,
+    "uploader": "agent",
+    "privacy_policy_mirror_serves_build": "0.2.1 (11)",
+    "privacy_policy_sync_required": false,
+    "primary_dashboard_notes_language": "en",
+    "global_asset_language": "en",
+    "publicly_available": false,
+    "auto_publish_after_review": true,
+    "submission_verified_at": "2026-10-25T11:06:25+08:00",
+    "localized_screenshots": {
+      "zh-CN": 2
+    }
+  },
+  "global_asset_language": "en",
+  "publication_preparation": {
+    "privacy_policy_mirror_synced": true,
+    "privacy_policy_synced_at": "2026-10-25T10:45:28+08:00",
+    "asset_replacement_confirmation_received": true,
+    "localized_chinese_assets_required": true,
+    "global_english_images_uploaded": 4,
+    "localized_chinese_screenshots_uploaded": 2,
+    "asset_replacement_complete": true
+  },
+  "localized_asset_languages": {
+    "zh-CN": "zh-CN"
+  }
+}

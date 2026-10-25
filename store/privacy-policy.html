@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Full-Screen Assistant 的隐私政策：说明视频独立全屏功能所需的本地处理与临时会话信息。">
+  <title>隐私政策 / Privacy Policy — Full-Screen Assistant</title>
+  <style>
+    :root{color-scheme:light dark;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC",sans-serif;color:#253044;background:#f5f7fb;font-synthesis:none}
+    *{box-sizing:border-box}body{margin:0;line-height:1.8}main{max-width:920px;margin:56px auto;padding:0 28px 64px}header{padding-bottom:28px;border-bottom:1px solid #dce2ed}.brand{display:flex;align-items:center;gap:14px;font-weight:650;font-size:18px}.brand svg{width:48px;height:48px;flex:none}h1{font-size:36px;line-height:1.3;letter-spacing:-.025em;margin:30px 0 10px}h2{font-size:23px;line-height:1.4;margin:34px 0 14px}h3{font-size:17px;margin:26px 0 8px}p{margin:10px 0}ul{padding-left:24px;margin:10px 0}li{margin:7px 0}a{color:#315ed8;text-underline-offset:3px}.meta{font-size:14px;color:#64718a}.summary{padding:20px 22px;margin:28px 0;border:1px solid #dce5f4;border-radius:16px;background:#fff}.summary p{margin:0}nav{display:flex;gap:18px;margin-top:18px;font-size:14px}section{scroll-margin-top:28px}.english{margin-top:52px;padding-top:28px;border-top:1px solid #dce2ed}footer{margin-top:40px;padding-top:20px;border-top:1px solid #dce2ed;font-size:14px;color:#64718a}@media(max-width:600px){main{margin:28px auto;padding:0 20px 40px}h1{font-size:30px}.summary{padding:18px}}@media(prefers-color-scheme:dark){:root{color:#e4e9f3;background:#111827}.meta,footer{color:#a2aec3}header,.english,footer{border-color:#2c374b}.summary{background:#192338;border-color:#344461}a{color:#9eb7ff}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#202735"/><rect x="14" y="19" width="36" height="26" rx="3" fill="#739cff"/><path d="M28 26v12l10-6z" fill="#fff"/><path d="M18 10h-8v8m36-8h8v8M10 46v8h8m28 0h8v-8" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg><span>Full-Screen Assistant</span></div>
+    <h1>隐私政策</h1>
+    <p class="meta">生效日期 / Effective date: 2026-10-25</p>
+    <nav aria-label="Language"><a href="#zh">简体中文</a><a href="#en" lang="en">English</a></nav>
+  </header>
+
+  <section id="zh" lang="zh-CN">
+    <div class="summary"><p>本扩展为独立视频全屏功能在本机处理必要的网页内容及临时会话信息。0.2 将原视频标签移入独立窗口；旧 0.1.x 使用本机实时视频流。扩展不向开发者或外部服务器上传这些信息，不录制连续视频，不使用广告或分析追踪工具。0.2 可临时保存一张视频预览图；0.2.0 构建 7 起还在占位标签现有浏览器历史条目的状态中保留用于返回的原网页地址，具体范围和保留期限如下。</p></div>
+    <h2>1. 适用范围与目的</h2>
+    <p>本政策适用于 Full-Screen Assistant Chrome 扩展，并区分旧 0.1.x 与 0.2 系列的处理方式。扩展的单一用途是使用户操作的网页视频在独立窗口全屏，同时保留原浏览器及可点击退出的占位。</p>
+    <p><strong>0.2：</strong>将同一个真实视频标签临时移入独立普通浏览器窗口，沿用网站原播放器、字幕、媒体来源及 DRM 播放链路，退出后移回原浏览器。原浏览器显示占位标签，其他标签仍可使用；原网页周围的内容随真实标签移动。扩展不建立视频接收器，不使用 <code>captureStream()</code>、WebRTC 或实时视频重编码。</p>
+    <p><strong>旧 0.1.x：</strong>源网页保留在原浏览器，扩展通过同一设备上的实时视频轨道和 WebRTC 连接在另一个窗口显示视频。音频继续由源网页播放，接收窗口静音。此旧版处理方式仍由本政策覆盖。</p>
+    <h2>2. 0.2 在本机处理的信息</h2>
+    <ul>
+      <li><strong>当前视频页面标题及用于返回的原网页地址：</strong>标题用于占位标签及当前会话关联。0.2.0 构建 7 起还处理原网页的 HTTP(S) 地址，用于占位导航后按后退恢复普通网页；地址保留方式和期限见第 4 节。不生成额外浏览历史日志。</li>
+      <li><strong>原网站图标（构建 10 起）：</strong>占位标签以已保存的原网页地址为参数，通过 Chrome 内部图标服务读取对应的网站图标并显示。扩展不直接向原网站抓取图标，不使用第三方 favicon 服务，也不将该地址或图标上传给开发者。</li>
+      <li><strong>可选的单帧视频预览：</strong>浏览器允许时，从用户操作的视频取得一张缩小 JPEG 图像，用作模糊占位背景。这不是整页或整屏截图，不读取网页其他区域，也不是连续录像。若 CORS、DRM 或视频状态使取图失败，使用渐变背景；原视频仍由原播放器播放，不以预览成功作为全屏条件。预览可能包含视频本身显示的个人信息，只用于本机占位。</li>
+      <li><strong>临时浏览器会话信息：</strong>源标签、占位标签、窗口、框架、文档、请求和会话标识，以及恢复位置所需的标签顺序、固定、分组、窗口和会话状态、会话时间及必要的本地错误信息。它们用于移动和返回正确的真实标签，并在服务工作线程暂停后继续恢复或清理。</li>
+      <li><strong>必要的用户操作：</strong>在匹配页面本地监听可信的点击、触摸和按键手势，以验证全屏请求并触发会话；只在页面内存保留最近一次可信手势时间和必要的激活时间，后续操作覆盖，页面刷新或关闭时销毁。全屏及退出动作触发本地窗口恢复。不记录键入内容、按键日志或完整的点击及滚动轨迹。</li>
+    </ul>
+    <p>0.2 不建立扩展视频传输连接，不处理旧版用于视频通道的 SDP/ICE 或本地连接地址信息，不使用 GPS、地理位置权限或位置查询服务。</p>
+    <h2>3. 旧 0.1.x 的额外本机处理</h2>
+    <p>旧版从所选视频元素取得实时视频轨道，通过本机 <code>RTCPeerConnection</code> 显示在扩展接收窗口。为同步自带控件，旧版处理播放/暂停、进度、时长、音量、静音、播放速度和可跳转范围，并处理视频区域尺寸以放置占位。旧版还暂存当前页面标题、源/接收标签及窗口、框架、文档和会话标识，以及 WebRTC 连接描述（SDP/ICE）。连接描述可能包含本地连接或地址信息，仅用于建立本机视频通道；这是旧版涉及连接地址或位置类信息的原因。双方均不配置 STUN/TURN 服务器。旧版的可信手势处理同样限于上述本地验证，不建立按键或行为历史。</p>
+    <p>各版本均不读取浏览器保存的密码、网站 Cookie 或网站表单字段，不抓取整页内容，不要求扩展账号，也不建立广告画像。所选视频、页面标题和原网页地址可能包含个人信息，仍只按本政策用于本机全屏及普通网页恢复功能。</p>
+    <h2>4. 保存位置与保留时间</h2>
+    <p>0.2 的当前会话关联、页面标题、原网页 HTTP(S) 地址（构建 7 起）、恢复状态及单帧 JPEG 预览暂存在 <code>chrome.storage.session</code> 中，正常结束会话或源标签关闭并完成清理时移除。恢复失败时，仅为重试保留必要的会话记录，直至恢复或清理完成。最近可信手势及激活时间留在页面内存，由后续操作覆盖，页面刷新或关闭时销毁，不写入会话存储。</p>
+    <p>0.2.0 构建 7 起，占位标签还通过 <code>history.replaceState</code> 将原网页地址保存到当前已有的浏览器历史条目状态中；不为此新增历史条目。该地址用于占位导航后按后退时，在同一标签内以普通网页替换已失效的占位页面。该原生历史条目状态不随会话清理而立即删除，会保留至 Chrome 移除此条目或用户清理浏览历史。扩展不另建浏览历史日志，也不上传此地址。</p>
+    <p>旧 0.1.x 的视频帧按实时流处理，不录制为文件或视频库；其必要会话关联、页面标题和 SDP/ICE 连接描述暂存在 <code>chrome.storage.session</code>，会话结束及相关窗口清理时移除。浏览器重启或扩展停用会清除该会话存储。各版本均不使用 <code>storage.sync</code>，不通过浏览器账号同步这些信息，也不建立持久预览图库。</p>
+    <h2>5. 传输、分享与第三方</h2>
+    <p>0.2 只在同一设备的浏览器上下文间传递会话消息、标题、用于返回的原网页地址（构建 7 起）及可选预览图；旧 0.1.x 另在本机传递视频轨道和播放控制。扩展不配置开发者媒体接收端，不向开发者、广告商、数据经纪商或分析服务上传这些信息，也不出售用户数据。开发者无法通过扩展远程查看用户的视频或页面内容。</p>
+    <p>原视频网站仍按自身实现请求媒体，并负责其账号、Cookie、广告及数据处理，适用该网站的隐私政策。Chrome 和 Chrome 网上应用店的下载、更新、评价等服务由 Google 提供，适用 Google 的政策。</p>
+    <h2>6. 权限的用途</h2>
+    <p><strong>HTTP/HTTPS 网页及子框架访问：</strong>用于发现用户操作的视频、处理全屏和退出请求；0.2 尝试生成单帧预览并处理返回布局及过渡，旧 0.1.x 还同步其播放控件和视频区域占位。播放器可能位于跨域 iframe，因此内容脚本在匹配的网页及相关子框架运行。</p>
+    <p><strong>storage：</strong>仅保存上述临时会话信息。0.2 的预览从视频元素取单帧，不新增整页截图、整屏录制或标签页录制权限。扩展不申请浏览历史、Cookie、摄像头或麦克风权限。</p>
+    <p><strong>favicon（构建 10 起）：</strong>用于在占位标签显示原网站图标。占位页通过 <code>chrome.runtime.getURL("_favicon/")</code> 访问 Chrome 内部图标服务，图片内容安全策略仅允许扩展自身和 <code>data:</code> 来源，不加载外站或第三方图标服务地址。Chrome 安装或更新时可能提示读取所访问网站的图标。</p>
+    <h2>7. 用户控制</h2>
+    <p>0.2 可按 Esc、使用网站退出全屏操作、点击原浏览器占位或扩展图标，将真实标签移回浏览器。系统窗口关闭按钮或 Cmd-W 会关闭真实视频标签，并非返回操作。0.2.0 构建 6 起，关闭占位标签或在占位标签中导航到其他网页，也会关闭绑定的真实视频标签；只切换到其他标签不会关闭视频，导航后的新网页会保留。构建 7 起，按后退回到已结束会话的占位历史条目时，会在同一标签内恢复原网页的普通页面，不重建独立全屏窗口或恢复已结束的会话。全屏期间应先正常退出，再重载、停用或移除扩展。旧 0.1.x 可使用 Esc、自带播放器退出按钮或源网页占位退出接收窗口。</p>
+    <p>Chrome 扩展管理页面可限制网站访问、停用或移除扩展。扩展不绕过 DRM 或网站保护。0.2 的单帧预览失败不会阻止原播放器继续使用；旧 0.1.x 无法捕获视频时保留源网页。</p>
+    <h2>8. 限制使用、变更与联系</h2>
+    <p>Full-Screen Assistant 对 Chrome API 信息的处理遵守 Chrome 网上应用店用户数据政策及其限制使用要求。信息只用于本政策说明的独立视频全屏功能，不用于广告、无关用户画像、信用评估或贷款决定。</p>
+    <p>若处理方式发生变化，本政策将随之更新并标明生效日期。隐私问题可通过本扩展在 Chrome 网上应用店页面提供的开发者联系或支持方式联系发布者。</p>
+  </section>
+
+  <section id="en" class="english" lang="en">
+    <h2>Privacy Policy</h2>
+    <div class="summary"><p>The extension processes the web content and temporary session information needed for independent video fullscreen locally. Version 0.2 moves the original video tab; older 0.1.x versions use a local live video stream. The extension does not upload this information to the developer or external servers, record continuous video, or use advertising or analytics trackers. Version 0.2 may temporarily retain one video still. Starting with 0.2.0 build 7, it also retains the original page address in the state of the placeholder tab's existing browser-history entry for ordinary-page recovery, with the scope and retention periods described below.</p></div>
+    <h3>1. Scope and purpose</h3>
+    <p>This policy applies to Full-Screen Assistant and distinguishes older 0.1.x versions from the 0.2 series. Its single purpose is independent fullscreen for a user-operated web video while preserving the original browser and a click-to-exit placeholder.</p>
+    <p><strong>Version 0.2:</strong> the same real video tab is temporarily moved into a separate normal browser window, retaining the website's player, captions, media source and DRM playback path. Exiting moves it back. The original browser displays a placeholder tab and its other tabs remain usable; surrounding source-page content moves with the real tab. The extension creates no video receiver and does not use <code>captureStream()</code>, WebRTC or live video re-encoding.</p>
+    <p><strong>Older 0.1.x versions:</strong> the source page stays in its browser. A live video track and a WebRTC connection display the picture in another window on the same device. Audio continues at the source page and the receiver is muted. This policy continues to cover that legacy processing.</p>
+    <h3>2. Information processed locally in 0.2</h3>
+    <ul>
+      <li><strong>Current video page title and original page address for recovery:</strong> the title is used for the placeholder and current-session association. Starting with 0.2.0 build 7, the original page's HTTP(S) address is also processed to restore an ordinary page when navigating back after leaving the placeholder. Section 4 describes its storage and retention. No additional browsing-history log is created.</li>
+      <li><strong>Original website icon (starting with build 10):</strong> the placeholder uses the saved original page address to read and display the corresponding icon through Chrome's internal favicon service. The extension does not fetch icons directly from the original website, use a third-party favicon service or upload the address or icon to the developer.</li>
+      <li><strong>Optional single-frame video preview:</strong> when the browser permits it, one reduced-size JPEG frame is obtained from the selected video for the blurred placeholder background. It is not a whole-page or screen screenshot, does not read other page areas and is not a continuous recording. If CORS, DRM or video readiness prevents it, a gradient is used; the original player continues and preview success is not a fullscreen requirement. A still may contain personal information visible in the video and is used only for the local placeholder.</li>
+      <li><strong>Temporary browser/session information:</strong> source and placeholder tab, window, frame, document, request and session identifiers, restoration details such as tab order, pinned state and group, window/session status, session timing and necessary local error information. These move and return the correct real tab and support recovery or cleanup after service-worker suspension.</li>
+      <li><strong>Necessary user actions:</strong> trusted click, touch and key gestures on matching pages are handled locally to validate fullscreen requests and trigger sessions. Only the latest trusted-gesture time and necessary activation timing remain in page memory, are overwritten by later activity and are discarded on refresh or close. Fullscreen and exit actions trigger local window restoration. Typed content, keystroke logs and complete click or scroll trails are not recorded.</li>
+    </ul>
+    <p>Version 0.2 creates no extension video-transfer connection and does not process the SDP/ICE or local connection/address information used for the legacy video channel. It uses no GPS, geolocation permission or location-lookup service.</p>
+    <h3>3. Additional local processing in older 0.1.x versions</h3>
+    <p>Older versions obtain a live video track from the selected video element and display it in an extension receiver through a local <code>RTCPeerConnection</code>. Playback state, position, duration, volume, mute, playback rate and seekable range synchronize the extension's controls; video-area dimensions position its placeholder. Older versions also temporarily retain the current-page title, source/receiver tab, window, frame, document and session identifiers, and WebRTC SDP/ICE descriptions. These descriptions may include local connection/address information used only to establish the local video channel. This is why the legacy implementation includes connection-address or location-related disclosure. Neither peer configures STUN/TURN servers. Trusted-gesture processing is likewise limited to local validation, without keystroke or behavioral histories.</p>
+    <p>No version reads browser-saved passwords, website cookies or website form fields, scrapes entire pages, requires an extension account or builds advertising profiles. Selected videos, titles and original page addresses may contain personal information; they are still used only for the local fullscreen and ordinary-page recovery purposes described here.</p>
+    <h3>4. Storage and retention</h3>
+    <p>In 0.2, current-session associations, titles, the original page's HTTP(S) address (starting with build 7), restoration state and the single JPEG preview are temporarily stored in <code>chrome.storage.session</code>. They are removed on normal session completion or source-tab closure and cleanup. If restoration fails, necessary session records remain only for retry until recovery or cleanup completes. Trusted-gesture and activation times stay in page memory, are overwritten by later activity and disappear on page refresh or close; they are not written to session storage.</p>
+    <p>Starting with 0.2.0 build 7, the placeholder tab also uses <code>history.replaceState</code> to save the original page address in the state of its existing browser-history entry, without adding an entry for this purpose. This address lets Back navigation replace an expired placeholder with an ordinary page in the same tab. This native history-entry state is not immediately deleted when the fullscreen session is cleaned up; it remains until Chrome removes the entry or the user clears browsing history. The extension does not build an additional browsing-history log or upload this address.</p>
+    <p>Older 0.1.x video frames are handled as a live stream, not recorded into files or a video library. Necessary session associations, titles and SDP/ICE descriptions are temporarily held in <code>chrome.storage.session</code> and removed when sessions end and related windows are cleaned up. Browser restart or extension disabling clears session storage. No version uses <code>storage.sync</code>, syncs this information through a browser account or builds a persistent preview-image library.</p>
+    <h3>5. Transfers, sharing and third parties</h3>
+    <p>Version 0.2 passes session messages, titles, the original page address for recovery (starting with build 7) and optional previews only between browser contexts on the same device; older 0.1.x versions also pass local video tracks and playback controls. No developer media endpoint is configured. The extension does not upload this information to the developer, advertisers, data brokers or analytics services, or sell user data. The developer cannot remotely view videos or page content through the extension.</p>
+    <p>The original website makes media requests under its own implementation and remains responsible for its accounts, cookies, advertising and data processing under its own policy. Chrome and Chrome Web Store downloads, updates and reviews are provided by Google under Google's policies.</p>
+    <h3>6. Permissions</h3>
+    <p><strong>HTTP/HTTPS page and frame access:</strong> identifies user-operated videos and handles fullscreen/exit requests. Version 0.2 attempts a still preview and restores page layout with a return transition; older 0.1.x versions additionally synchronize their player controls and video-area placeholder. Players can be in cross-origin iframes, so scripts run on matching pages and related frames.</p>
+    <p><strong>Storage:</strong> holds only the temporary session information described above. The 0.2 preview obtains a frame from the video element without adding whole-page screenshot, screen-recording or tab-recording permissions. No browsing-history, cookies, camera or microphone permission is requested.</p>
+    <p><strong>Favicon (starting with build 10):</strong> displays the original website's icon in the placeholder tab. The placeholder uses <code>chrome.runtime.getURL("_favicon/")</code> to access Chrome's internal favicon service. Its image content-security policy allows only the extension's own origin and <code>data:</code> sources, rather than external websites or third-party favicon-service addresses. Chrome may show a permission notice about reading the icons of visited websites during installation or an update.</p>
+    <h3>7. Your controls</h3>
+    <p>In 0.2, Esc, the website's exit-fullscreen action, the original-browser placeholder or the extension icon return the real tab. The system window-close button or Cmd-W closes the real video tab rather than returning it. Starting with 0.2.0 build 6, closing the placeholder or navigating that tab to another page also closes the bound video tab. Switching to another tab keeps playback alive, and the newly navigated page is retained. Starting with build 7, Back navigation to a placeholder history entry whose session has ended restores the original website as an ordinary page in the same tab; it does not recreate the independent fullscreen window or revive the ended session. Exit normally before reloading, disabling or removing the extension. Older 0.1.x versions provide Esc, an extension-player exit button and the source-page placeholder to exit their receiver window.</p>
+    <p>Chrome's extension manager lets you restrict site access, disable or remove the extension. The extension does not bypass DRM or website protection. Failed still previews in 0.2 do not block use of the original player; older 0.1.x versions leave playback in the source page when capture is unavailable.</p>
+    <h3>8. Limited Use, changes and contact</h3>
+    <p>Our handling of Chrome API data complies with the Chrome Web Store User Data Policy and its Limited Use requirements. Information is used only for the independent-video-fullscreen feature described here, not advertising, unrelated profiling, creditworthiness or lending decisions.</p>
+    <p>If data handling changes, this policy will be updated with a new effective date. For privacy questions, use the developer contact or support information provided on this extension's Chrome Web Store listing.</p>
+  </section>
+  <footer>Full-Screen Assistant · <a href="https://developer.chrome.com/docs/webstore/program-policies/user-data-faq">Chrome Web Store User Data Policy</a></footer>
+</main>
+</body>
+</html>

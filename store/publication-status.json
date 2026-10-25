@@ -1,0 +1,179 @@
+{
+  "version": "0.2.1.11",
+  "version_name": "0.2.1 (11)",
+  "item_id": "milabmjkgbmflkdbbedoafpadjflmfdc",
+  "publisher_id": "fc20dd14-9afe-4556-a5af-2224f0f5575c",
+  "dashboard_url": "https://chrome.google.com/webstore/devconsole/fc20dd14-9afe-4556-a5af-2224f0f5575c/milabmjkgbmflkdbbedoafpadjflmfdc/edit/status?hl=zh-cn",
+  "status": "pending_review",
+  "uploaded": true,
+  "submitted": true,
+  "publicly_available": false,
+  "privacy_policy_url": "https://fsa-privacy-zhangyi.toufayehehua.chatgpt.site",
+  "review_demo_url": "https://domicube.xyz/extensions/full-screen-assistant/demo/",
+  "local_materials_ready": true,
+  "listing_languages": [
+    "zh-CN",
+    "en"
+  ],
+  "category": "Tools",
+  "distribution": {
+    "price": "free",
+    "visibility": "public",
+    "regions": "all"
+  },
+  "reviewer_instructions_saved": true,
+  "privacy_draft_saved": true,
+  "submission_pending": false,
+  "last_checked_at": "2026-10-25T11:06:25+08:00",
+  "pending_steps": [
+    "Chrome Web Store compliance review; automatic publication on approval"
+  ],
+  "auto_publish_after_review": true,
+  "store_screenshots_uploaded": 2,
+  "store_promotional_images_uploaded": 2,
+  "local_candidate": {
+    "version": "0.2.1.11",
+    "version_name": "0.2.1 (11)",
+    "status": "pending_review",
+    "package_ready": true,
+    "uploaded": true,
+    "submitted": true,
+    "publicly_available": false,
+    "user_will_upload": false,
+    "verified_at": "2026-10-25T11:06:25+08:00",
+    "verification": "store/verification/release-0.2.1-build11.json",
+    "upload_package": "releases/Full-Screen-Assistant-0.2.1-build11-webstore.zip",
+    "remaining": [
+      "Chrome Web Store compliance review; automatic publication on approval"
+    ],
+    "agent_will_upload": true,
+    "default_listing_language": "en",
+    "global_asset_language": "en",
+    "policy_deployed": true,
+    "localized_asset_languages": {
+      "zh-CN": "zh-CN"
+    }
+  },
+  "prior_review_cancelled_at": "2026-10-25T09:29:27+08:00",
+  "privacy_mirror": {
+    "project_id": "appgprj_6add5e0b10788191afde3361c087ca30",
+    "saved_version_id": "appgprj_6add5e0b10788191afde3361c087ca30~appgver_f5827bd4c894819183ccff9d24ca12df",
+    "commit_sha": "7c45ea370bf633c12433f4e29682b828defac17c",
+    "expected_url": "https://fsa-privacy-zhangyi.toufayehehua.chatgpt.site",
+    "status": "deployed",
+    "access_mode": "public",
+    "public_access_confirmation_pending": false,
+    "public_access_confirmed_at": "2026-10-25T09:46:25+08:00",
+    "deployment_id": "appgdep_6add6d41e8bc819186b6b1347b23c0b9",
+    "url": "https://fsa-privacy-zhangyi.toufayehehua.chatgpt.site",
+    "deployed_at": "2026-10-25T10:45:28+08:00",
+    "anonymous_http_status": 200,
+    "visible_text_matches_source": true,
+    "source_sha256": "e902bfbea4e569f3f5b5d08273f332456e45231c48818073fa3e4d8906534a26",
+    "covers_source_url_history_and_favicon": true
+  },
+  "cleanup": {
+    "store_tab_closed": false,
+    "all_task_video_test_tabs_closed": true,
+    "unrelated_user_tabs_preserved": true,
+    "superseded_local_zips_removed": [
+      "releases/Full-Screen-Assistant-0.2.0-build10.zip",
+      "releases/Full-Screen-Assistant-0.2.0-build10-webstore.zip",
+      "releases/Full-Screen-Assistant-0.2.0-build5-webstore.zip",
+      "releases/Full-Screen-Assistant-0.2.0-build5-store-assets.zip"
+    ],
+    "existing_user_store_tab_reused": true,
+    "new_browser_tabs_created_this_upload_turn": 0,
+    "obsolete_outputs_cleanup": {
+      "verified_at": "2026-10-25T11:12:53+08:00",
+      "removed_files": [
+        {
+          "path": "store/release-verification.json",
+          "bytes": 8705
+        },
+        {
+          "path": "store/submission-proof.png",
+          "bytes": 136835
+        },
+        {
+          "path": "store/verification/build7-fullscreen.png",
+          "bytes": 31025
+        },
+        {
+          "path": "store/verification/iframe-player.json",
+          "bytes": 1343
+        },
+        {
+          "path": "store/verification/original-player-fullscreen.png",
+          "bytes": 150712
+        },
+        {
+          "path": "store/verification/original-player.json",
+          "bytes": 1962
+        },
+        {
+          "path": "store/verification/release-0.1.3-build4.json",
+          "bytes": 8415
+        },
+        {
+          "path": "store/verification/release-0.2.0-build6.json",
+          "bytes": 3888
+        },
+        {
+          "path": "store/verification/release-0.2.0-build7.json",
+          "bytes": 4410
+        },
+        {
+          "path": "store/verification/release-0.2.0-build8.json",
+          "bytes": 3826
+        },
+        {
+          "path": "store/verification/release-0.2.0-build9.json",
+          "bytes": 3659
+        },
+        {
+          "path": "store/verification/upload-proof-0.2.1-build11.png",
+          "bytes": 175668
+        },
+        {
+          "path": "store/verification/youtube-fullscreen.png",
+          "bytes": 320899
+        }
+      ],
+      "removed_file_count": 13,
+      "removed_bytes": 851347,
+      "retained_latest_release": "0.2.1 (11)",
+      "retained_archive_sha256": {
+        "releases/Full-Screen-Assistant-0.2.1-build11-store-assets.zip": "749e28a55ae7e929cad725529510427d3337305c49041c419a2a5978817a383f",
+        "releases/Full-Screen-Assistant-0.2.1-build11-webstore.zip": "f84118877f4760a71df57d9f283220de88029427c79f48d3df09a1e35984539f",
+        "releases/Full-Screen-Assistant-0.2.1-build11.zip": "d0c1d7ac2d64bd1478c353bb782d29e7b8e634b6f32d8369767bdc0a05276165"
+      },
+      "retained_browser_evidence": [
+        "store/verification/release-0.2.0-build10.json",
+        "store/verification/build10-youtube-fullscreen.png"
+      ],
+      "task_test_server_running": false,
+      "shared_cua_tool_processes_preserved": true
+    }
+  },
+  "default_listing_language": "en",
+  "global_asset_language": "en",
+  "previous_submission": {
+    "version": "0.2.0.5",
+    "version_name": "0.2.0 (5)",
+    "submitted_at": "2026-10-25T09:47:00+08:00",
+    "status_when_current_turn_started": "draft",
+    "crx_revision": "00002",
+    "superseded_proof_removed": true
+  },
+  "english_global_screenshots_uploaded": 2,
+  "old_chinese_global_images_remaining": 0,
+  "store_images_replacement_complete": true,
+  "submission_verified_at": "2026-10-25T11:06:25+08:00",
+  "localized_screenshots_uploaded": {
+    "zh-CN": 2
+  },
+  "proof_screenshot": "store/submission-proof-0.2.1-build11.png",
+  "localization_proof": "store/verification/store-locales-0.2.1-build11.png",
+  "latest_verification": "store/verification/release-0.2.1-build11.json"
+}
