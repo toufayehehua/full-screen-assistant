@@ -1,0 +1,63 @@
+{
+  "product_architecture": "0.2",
+  "asset_language": "en",
+  "default_for_all_regions": true,
+  "screenshots_ready": true,
+  "screenshot_kind": "labelled original diagrams",
+  "capture_sources": [],
+  "files": {
+    "promo-marquee-1400x560.png": {
+      "size": [
+        1400,
+        560
+      ],
+      "mode": "RGB"
+    },
+    "promo-small-440x280.png": {
+      "size": [
+        440,
+        280
+      ],
+      "mode": "RGB"
+    },
+    "screenshot-01-browser-1280x800.png": {
+      "size": [
+        1280,
+        800
+      ],
+      "mode": "RGB"
+    },
+    "screenshot-02-restored-1280x800.png": {
+      "size": [
+        1280,
+        800
+      ],
+      "mode": "RGB"
+    },
+    "store-icon-128.png": {
+      "size": [
+        128,
+        128
+      ],
+      "mode": "RGB"
+    }
+  },
+  "localized_screenshots": {
+    "zh-CN": {
+      "screenshot-01-browser-1280x800.png": {
+        "size": [
+          1280,
+          800
+        ],
+        "mode": "RGB"
+      },
+      "screenshot-02-restored-1280x800.png": {
+        "size": [
+          1280,
+          800
+        ],
+        "mode": "RGB"
+      }
+    }
+  }
+}
