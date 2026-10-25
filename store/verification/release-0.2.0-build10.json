@@ -1,0 +1,136 @@
+{
+  "schema_version": 2,
+  "verified_at": "2026-10-25T10:38:13+08:00",
+  "release": {
+    "version": "0.2.0.10",
+    "version_name": "0.2.0 (10)",
+    "status": "local_package_ready_youtube_retested",
+    "uploaded": false,
+    "submitted": false,
+    "publicly_available": false
+  },
+  "archives": [
+    {
+      "path": "releases/Full-Screen-Assistant-0.2.0-build10-webstore.zip",
+      "sha256": "ee5d5248ecab2e49d7f24cec712fb749847503eda4a8000a5b25314c97b71642",
+      "bytes": 45098,
+      "manifest_at_zip_root": true,
+      "manifest_version": "0.2.0.10",
+      "zip_integrity": "passed",
+      "runtime_readme_and_policy_match_workspace": true
+    },
+    {
+      "path": "releases/Full-Screen-Assistant-0.2.0-build10.zip",
+      "sha256": "e11d212a4fc9e41420b010c7f75e7abe6ba87b589b20a27f9e776047a417ef19",
+      "bytes": 46106,
+      "manifest_at_zip_root": false,
+      "manifest_version": "0.2.0.10",
+      "zip_integrity": "passed",
+      "runtime_readme_and_policy_match_workspace": true
+    }
+  ],
+  "checks": {
+    "command": "npm test",
+    "page_bridge_placeholder_vm_cases": 60,
+    "worker_mock_chrome_scenarios": 56,
+    "logical_cases_total": 116,
+    "node_reported_tests": 61,
+    "passed": true,
+    "javascript_syntax": "passed"
+  },
+  "changes": [
+    "Video enters fullscreen before placeholder content/title/favicon are revealed; a silent safety tab keeps the original browser window alive.",
+    "Hidden placeholder preparation acknowledges metadata without blocked paint/decode/timer waits.",
+    "CSS fullscreen fallback exposes managed state and dispatches entry/exit notifications while internal recovery reads native state.",
+    "Placeholder reads the original website icon through the extension favicon cache, with the favicon permission; no third-party favicon service.",
+    "Preserve pending-URL ownership, original-page Back recovery, source-close linkage and single post-return blur transition."
+  ],
+  "real_chrome": {
+    "new_build_reloaded": true,
+    "target_url": "https://www.youtube.com/watch?v=Xtfl8kTze6g",
+    "youtube_fullscreen_verified": true,
+    "back_navigation_verified": false,
+    "animation_appearance_verified": false,
+    "favicon_verified": false,
+    "only_one_task_source_tab_at_a_time": true,
+    "test_servers_started": false,
+    "original_controls_retained": true,
+    "video_dimensions": [
+      3840,
+      2160
+    ],
+    "player_rect_equals_viewport": [
+      1710,
+      1018
+    ],
+    "valid_fullscreen_cycles_observed": 3,
+    "effective_cycles_after_last_website_refresh": 2,
+    "first_hold_video_time_advanced_from": 38.573023,
+    "first_hold_video_time_advanced_to": 86.21461,
+    "first_hold_exceeded_15_second_startup_timeout": true,
+    "site_original_exit_verified": true,
+    "escape_exit_verified": true,
+    "warm_reentry_verified": true,
+    "source_media_unchanged_across_return": true,
+    "return_cover_removed": true,
+    "test_placeholder_removed_on_return": true,
+    "all_task_source_tabs_closed": true,
+    "closed_test_source_ids": [
+      "955771856",
+      "955771872",
+      "955771889"
+    ],
+    "native_fullscreen_selector_observed": "HTML",
+    "css_fallback_observed_in_browser": false,
+    "interrupted_attempt": {
+      "reason": "Extension context invalidated after extension reload; current test website refreshed before the two succeeding cycles.",
+      "counted_as_success": false
+    },
+    "verification_snapshot_sha256": {
+      "manifest.json": "388c4177e31b87431f02eac82d89c97070c7b9b8f00d19088672b73271ed18be",
+      "service-worker.js": "2b65eee7e19e28436c782eada5f521cc84ddf302badd3b706ac7099a8a809ed5",
+      "page.js": "7a45ba279bb620f7b85ea3fc4c0c9d22e47ec4bde92ee52b4dfd871a3f49d6b4",
+      "bridge.js": "8ca6240e98c805d7bb7edfeb6ef2e5009f869bc3f8c3c490b16e653de37b99cc",
+      "placeholder.js": "b072308cbf85f0473946f4fa25635f79b9ede9327a019ca09ac8668ae6cbac07",
+      "placeholder.css": "ffe8f577504a44db00f3224f54dd0875a53281e84ba03654f4b9e27714839f4f",
+      "placeholder.html": "d0c8c82ac5db131198686b5727a2cb76bc01bf7bae53eb0268af1c24445f4a61"
+    },
+    "post_verification_cleanup": "Removed the normal-return diagnostic log and quieted the known invalidated-context warning. Functional flow unchanged. Logic regression and ZIP-byte verification repeated; log cleanup itself not reloaded in Chrome.",
+    "proof_screenshot": "store/verification/build10-youtube-fullscreen.png",
+    "proof_sha256": "6cc3984353c67146622ef9511c78ba49d3fedcd188ea72521c533c86ebf8f964",
+    "proof_dimensions": [
+      1710,
+      1018
+    ]
+  },
+  "source_sha256": {
+    "manifest.json": "388c4177e31b87431f02eac82d89c97070c7b9b8f00d19088672b73271ed18be",
+    "service-worker.js": "2b65eee7e19e28436c782eada5f521cc84ddf302badd3b706ac7099a8a809ed5",
+    "page.js": "228de19eee4f95b64b219d9a9545dfca89b39aa8cd19cf9c2e29c2f88436ec03",
+    "bridge.js": "8ca6240e98c805d7bb7edfeb6ef2e5009f869bc3f8c3c490b16e653de37b99cc",
+    "placeholder.js": "b072308cbf85f0473946f4fa25635f79b9ede9327a019ca09ac8668ae6cbac07",
+    "placeholder.css": "ffe8f577504a44db00f3224f54dd0875a53281e84ba03654f4b9e27714839f4f",
+    "placeholder.html": "d0c8c82ac5db131198686b5727a2cb76bc01bf7bae53eb0268af1c24445f4a61"
+  },
+  "privacy": {
+    "source": "store/privacy-policy.html",
+    "source_sha256": "e902bfbea4e569f3f5b5d08273f332456e45231c48818073fa3e4d8906534a26",
+    "public_mirror_updated_for_build7_and_later": false
+  },
+  "store_submission": {
+    "version": "0.2.0.5",
+    "submission_not_changed": true
+  },
+  "cleanup": {
+    "superseded_build9_archives_removed": [
+      "releases/Full-Screen-Assistant-0.2.0-build9-webstore.zip",
+      "releases/Full-Screen-Assistant-0.2.0-build9.zip"
+    ],
+    "submitted_build5_webstore_archive_and_materials_retained": true,
+    "all_task_source_tabs_closed": true,
+    "no_test_servers_started": true,
+    "normal_exit_diagnostic_removed": true,
+    "old_error_panel_records_require_user_clear": true,
+    "provisional_build9_screenshot_removed": true
+  }
+}

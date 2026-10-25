@@ -1,0 +1,284 @@
+{
+  "schema_version": 2,
+  "verified_at": "2026-10-25T11:06:25+08:00",
+  "release": {
+    "version": "0.2.1.11",
+    "version_name": "0.2.1 (11)",
+    "status": "pending_review",
+    "uploaded": true,
+    "submitted": true,
+    "publicly_available": false,
+    "user_will_upload": false,
+    "uploader": "agent",
+    "default_locale": "en",
+    "auto_publish_after_review": true,
+    "submission_verified_at": "2026-10-25T11:06:25+08:00"
+  },
+  "archives": [
+    {
+      "path": "releases/Full-Screen-Assistant-0.2.1-build11-webstore.zip",
+      "sha256": "f84118877f4760a71df57d9f283220de88029427c79f48d3df09a1e35984539f",
+      "bytes": 45144,
+      "version": "0.2.1.11",
+      "manifest_at_zip_root": true,
+      "file_count": 15,
+      "zip_integrity": "passed",
+      "all_bytes_match_source": false,
+      "default_locale": "en",
+      "all_bytes_match_source_at_packaging": true,
+      "post_upload_documentation_difference": "README.md only; runtime and packaged privacy policy unchanged"
+    },
+    {
+      "path": "releases/Full-Screen-Assistant-0.2.1-build11.zip",
+      "sha256": "d0c1d7ac2d64bd1478c353bb782d29e7b8e634b6f32d8369767bdc0a05276165",
+      "bytes": 46152,
+      "version": "0.2.1.11",
+      "manifest_at_zip_root": false,
+      "file_count": 15,
+      "zip_integrity": "passed",
+      "all_bytes_match_source": false,
+      "default_locale": "en",
+      "all_bytes_match_source_at_packaging": true,
+      "post_upload_documentation_difference": "README.md only; runtime and packaged privacy policy unchanged"
+    }
+  ],
+  "checks": {
+    "command": "npm test",
+    "page_bridge_placeholder_cases": 60,
+    "worker_scenarios": 56,
+    "logical_cases_passed": 116,
+    "node_reported_tests": 61,
+    "passed": true,
+    "embedded_version_and_filename_match": true,
+    "runtime_unchanged_from_final_build10": true
+  },
+  "previous_browser_verification": "store/verification/release-0.2.0-build10.json",
+  "browser_verification_note": "The unchanged runtime was functionally tested on the user-provided YouTube URL in build10. Version0.2.1/build11 was not reloaded in Chrome in this packaging turn. Back/icon UI and frame-by-frame animation remain unverified.",
+  "source_sha256": {
+    "manifest.json": "f129eaa9aff64111b7825e72f97c3082da6c1f8844662d28663c710dd4e30366",
+    "package.json": "0b7dc6dde77a5e8d1a620b69bf1083aa8680e7219dbd87bf581cd12c4028adfb",
+    "page.js": "228de19eee4f95b64b219d9a9545dfca89b39aa8cd19cf9c2e29c2f88436ec03",
+    "bridge.js": "8ca6240e98c805d7bb7edfeb6ef2e5009f869bc3f8c3c490b16e653de37b99cc",
+    "service-worker.js": "2b65eee7e19e28436c782eada5f521cc84ddf302badd3b706ac7099a8a809ed5",
+    "placeholder.js": "b072308cbf85f0473946f4fa25635f79b9ede9327a019ca09ac8668ae6cbac07",
+    "placeholder.html": "d0c8c82ac5db131198686b5727a2cb76bc01bf7bae53eb0268af1c24445f4a61",
+    "placeholder.css": "ffe8f577504a44db00f3224f54dd0875a53281e84ba03654f4b9e27714839f4f"
+  },
+  "privacy_policy": {
+    "path": "store/privacy-policy.html",
+    "sha256": "e902bfbea4e569f3f5b5d08273f332456e45231c48818073fa3e4d8906534a26",
+    "packaged_as": "privacy.html",
+    "public_page_updated_this_turn": true,
+    "public_page_requires_user_sync_for_new_url_history_and_favicon_disclosures": false,
+    "public_url": "https://fsa-privacy-zhangyi.toufayehehua.chatgpt.site",
+    "deployment_id": "appgdep_6add6d41e8bc819186b6b1347b23c0b9",
+    "anonymous_http_status": 200,
+    "visible_text_matches_source": true,
+    "public_html_sha256": "4d5288136f4a888a13825808457950c24c29b7f5ce157b767b319ba15f89f796"
+  },
+  "external_actions": {
+    "store_opened": true,
+    "uploaded": true,
+    "review_submitted": true,
+    "privacy_policy_deployed": true,
+    "new_browser_tabs_created": 0,
+    "global_english_images_uploaded": 4,
+    "localized_chinese_screenshots_uploaded": 2
+  },
+  "cleanup": {
+    "superseded_zip_files_removed": [
+      "releases/Full-Screen-Assistant-0.2.0-build10.zip",
+      "releases/Full-Screen-Assistant-0.2.0-build10-webstore.zip",
+      "releases/Full-Screen-Assistant-0.2.0-build5-webstore.zip",
+      "releases/Full-Screen-Assistant-0.2.0-build5-store-assets.zip"
+    ],
+    "retained_zips": [
+      "releases/Full-Screen-Assistant-0.2.1-build11-store-assets.zip",
+      "releases/Full-Screen-Assistant-0.2.1-build11-webstore.zip",
+      "releases/Full-Screen-Assistant-0.2.1-build11.zip"
+    ],
+    "source_assets_and_historical_verification_retained": false,
+    "temporary_server_or_browser_started": false,
+    "temporary_deployment_archive_removed": true,
+    "task_helper_processes_exited": true,
+    "new_browser_tabs_created": 0,
+    "existing_user_store_tab_preserved": true,
+    "task_generated_temporary_files_removed": true,
+    "current_release_and_referenced_browser_evidence_retained": true,
+    "obsolete_outputs_cleanup": {
+      "verified_at": "2026-10-25T11:12:53+08:00",
+      "removed_files": [
+        {
+          "path": "store/release-verification.json",
+          "bytes": 8705
+        },
+        {
+          "path": "store/submission-proof.png",
+          "bytes": 136835
+        },
+        {
+          "path": "store/verification/build7-fullscreen.png",
+          "bytes": 31025
+        },
+        {
+          "path": "store/verification/iframe-player.json",
+          "bytes": 1343
+        },
+        {
+          "path": "store/verification/original-player-fullscreen.png",
+          "bytes": 150712
+        },
+        {
+          "path": "store/verification/original-player.json",
+          "bytes": 1962
+        },
+        {
+          "path": "store/verification/release-0.1.3-build4.json",
+          "bytes": 8415
+        },
+        {
+          "path": "store/verification/release-0.2.0-build6.json",
+          "bytes": 3888
+        },
+        {
+          "path": "store/verification/release-0.2.0-build7.json",
+          "bytes": 4410
+        },
+        {
+          "path": "store/verification/release-0.2.0-build8.json",
+          "bytes": 3826
+        },
+        {
+          "path": "store/verification/release-0.2.0-build9.json",
+          "bytes": 3659
+        },
+        {
+          "path": "store/verification/upload-proof-0.2.1-build11.png",
+          "bytes": 175668
+        },
+        {
+          "path": "store/verification/youtube-fullscreen.png",
+          "bytes": 320899
+        }
+      ],
+      "removed_file_count": 13,
+      "removed_bytes": 851347,
+      "retained_latest_release": "0.2.1 (11)",
+      "retained_archive_sha256": {
+        "releases/Full-Screen-Assistant-0.2.1-build11-store-assets.zip": "749e28a55ae7e929cad725529510427d3337305c49041c419a2a5978817a383f",
+        "releases/Full-Screen-Assistant-0.2.1-build11-webstore.zip": "f84118877f4760a71df57d9f283220de88029427c79f48d3df09a1e35984539f",
+        "releases/Full-Screen-Assistant-0.2.1-build11.zip": "d0c1d7ac2d64bd1478c353bb782d29e7b8e634b6f32d8369767bdc0a05276165"
+      },
+      "retained_browser_evidence": [
+        "store/verification/release-0.2.0-build10.json",
+        "store/verification/build10-youtube-fullscreen.png"
+      ],
+      "task_test_server_running": false,
+      "shared_cua_tool_processes_preserved": true
+    }
+  },
+  "store_metadata": {
+    "default_listing_language": "en",
+    "default_language_verified_in_dashboard": true,
+    "global_asset_language": "en",
+    "english_description_saved": true,
+    "chinese_description_saved": true,
+    "reviewer_notes_language": "en",
+    "reviewer_notes_saved": true,
+    "privacy_permission_fields_saved": true,
+    "english_global_screenshots_added": 2,
+    "old_chinese_global_screenshots_remaining": 0,
+    "old_chinese_global_promotional_images_remaining": 0,
+    "replacement_status": "complete",
+    "distribution_verified": {
+      "price": "free",
+      "visibility": "public",
+      "regions": "all"
+    },
+    "localized_asset_languages": {
+      "zh-CN": "zh-CN"
+    },
+    "localized_screenshots_uploaded": {
+      "zh-CN": 2
+    }
+  },
+  "store_assets": [
+    {
+      "path": "store/assets/promo-marquee-1400x560.png",
+      "sha256": "73e2f1cbfadb1b2a3c49d6dfe70b568c481b641c1ff766bfd2ee99b3b26e84b9",
+      "bytes": 158227,
+      "width": 1400,
+      "height": 560,
+      "language": "en"
+    },
+    {
+      "path": "store/assets/promo-small-440x280.png",
+      "sha256": "ea3c1a8d8500a657e1b5ea1a81ffb57db6b11ffc395b41c81d814f0532e6ae8c",
+      "bytes": 47065,
+      "width": 440,
+      "height": 280,
+      "language": "en"
+    },
+    {
+      "path": "store/assets/screenshot-01-browser-1280x800.png",
+      "sha256": "61a1fd32287214640b256e942d621934cb2ffc5d9dbba66e5ee82676aa51db5b",
+      "bytes": 174784,
+      "width": 1280,
+      "height": 800,
+      "language": "en"
+    },
+    {
+      "path": "store/assets/screenshot-02-restored-1280x800.png",
+      "sha256": "02a8e56426a0d57a83167768614caaa59abc5f94b1c41724c756bcfe94c24550",
+      "bytes": 96045,
+      "width": 1280,
+      "height": 800,
+      "language": "en"
+    },
+    {
+      "path": "store/assets/store-icon-128.png",
+      "sha256": "195cd5b95b38cdab5fbaec8ad8f3e9c872b63ef8d654c2a7b06fc242178177f2",
+      "bytes": 3506,
+      "width": 128,
+      "height": 128,
+      "language": "branding"
+    },
+    {
+      "path": "store/assets/zh-CN/screenshot-01-browser-1280x800.png",
+      "sha256": "e8137fb7a10bb769cb291287787935527964f1e42db3e64b119fe3a29efaa6b9",
+      "bytes": 186237,
+      "width": 1280,
+      "height": 800,
+      "language": "zh-CN"
+    },
+    {
+      "path": "store/assets/zh-CN/screenshot-02-restored-1280x800.png",
+      "sha256": "2c09a57607cd002f0fd72b2949d8f380f83acd15e4e10861ba66fa28d034f50c",
+      "bytes": 102704,
+      "width": 1280,
+      "height": 800,
+      "language": "zh-CN"
+    }
+  ],
+  "post_upload_documentation_updated": true,
+  "store_assets_archive": {
+    "path": "releases/Full-Screen-Assistant-0.2.1-build11-store-assets.zip",
+    "sha256": "749e28a55ae7e929cad725529510427d3337305c49041c419a2a5978817a383f",
+    "bytes": 782475,
+    "file_count": 11,
+    "uploaded": false,
+    "includes_chinese_localized_screenshots": true
+  },
+  "submission_proof": {
+    "path": "store/submission-proof-0.2.1-build11.png",
+    "sha256": "d7f4c6a7b0e58f121bf2f75004c45a28ed389294ef12ac985568f4bee1536f4a",
+    "shows": "CWS pending review, package 0.2.1 (11), not yet published",
+    "image_processing": "crop only; excludes browser chrome/account"
+  },
+  "localization_proof": {
+    "path": "store/verification/store-locales-0.2.1-build11.png",
+    "sha256": "c41a36c537d73bd800c51e265716e2532f4b391145d90dcb36fe9929b33c9de0",
+    "shows": "Chinese localized screenshots and English global screenshots",
+    "image_processing": "crop only"
+  }
+}
