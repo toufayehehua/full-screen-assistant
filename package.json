@@ -1,0 +1,10 @@
+{
+  "name": "full-screen-assistant",
+  "version": "0.2.1",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/worker.mjs tests/page-bridge.mjs",
+    "package": "node scripts/package.mjs",
+    "test:browser": "node tests/serve.mjs"
+  }
+}

@@ -1,0 +1,7 @@
+node_modules/
+test-results/
+playwright-report/
+.DS_Store
+/store/privacy-mirror/
+/scripts/deploy-privacy.py
+/store/verification/build10-youtube-fullscreen.png
